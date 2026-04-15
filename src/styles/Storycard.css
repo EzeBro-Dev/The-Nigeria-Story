@@ -1,0 +1,17 @@
+.storycard{
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    align-self: center;
+    justify-self: center;
+    gap: 20px;
+    padding: 2%;
+    background-color: black;
+    border: none;
+}
+.storycard>img{
+    width: 250px;
+    height: 350px;
+    border-radius: 25px 0px 25px 0px;
+    border: none;
+    object-fit: cover;
+}
