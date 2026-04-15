@@ -37,7 +37,7 @@ const Home = () => {
         <div className="video-cont">
           <video
             ref={videoRef}
-            src="src/assets/nigeria.mp4"
+            src="https://res.cloudinary.com/dam0dyzlz/video/upload/v1776287186/nigeria_v12mkf.mp4"
             autoPlay
             muted
             loop
