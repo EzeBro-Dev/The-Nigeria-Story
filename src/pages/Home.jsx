@@ -2,7 +2,7 @@ import '../styles/Home.css'
 import Hero from "../components/Hero"
 import { useRef, useState } from "react";
 import Footer from '../components/Footer';
-import Nigeria from '../assets/nigeria.mp4';
+import NigeriaTrailer from '../assets/nigeria-trailer.mp4';
 import Shagari from '../assets/images/shagari.png';
 import Awolowo from '../assets/images/awolowo.png';
 import Yaradua from '../assets/images/yaradua.png';
@@ -50,7 +50,7 @@ const Home = () => {
         <div className="video-cont">
           <video
             ref={videoRef}
-            src={Nigeria}
+            src={NigeriaTrailer}
             autoPlay
             muted
             loop
