@@ -1,5 +1,8 @@
 import { Link } from "react-router-dom";
 import "../styles/Hero.css";
+import Logo from "../assets/logo.png";
+import Guinness from "../assets/guinness.png";
+import Slumart from "../assets/slumart.mp4";
 
 const Hero = () => {
   return (
@@ -7,14 +10,14 @@ const Hero = () => {
       <section className="hero">
         <div>
           <div className="nav-img">
-            <img src="src/assets/logo.png" alt="Logo" />
+            <img src={Logo} alt="Logo" />
           </div>
           <div>
             <Link to="/signup">
               <button className="nav-btn">Join</button>
             </Link>
           </div>
-          <img src="src/assets/guinness.png" alt="Image" className="guinness" />
+          <img src={Guinness} alt="Image" className="guinness" />
         </div>
       </section>
 
@@ -25,11 +28,6 @@ const Hero = () => {
         </h1>
         <p className="tell-text">
           <span>Help bring Nigeria’s story to life through animation.</span>
-          {/* <span>
-            You set the tone. You drive the drama. You decide what happens next.
-            No agents, no studio gatekeepers: Just you, your ideas, and the
-            power to shape the story.
-          </span> */}
         </p>
         <button className="tell-btn">Volunteer</button>
       </section>
@@ -37,7 +35,7 @@ const Hero = () => {
       <section className="stories">
         <video className="bg-video" autoPlay muted loop playsInline>
           <source
-            src="src/assets/slumart.mp4"
+            src={Slumart}
             type="video/mp4"
           />
           Your browser does not support the video tag.
@@ -45,10 +43,6 @@ const Hero = () => {
 
         <div className="stories-content">
           <h1>We are Breaking a Guinness World Record</h1>
-          {/* <p>
-            Here's a peek at some of the dynamic art styles you can easily
-            customize to create captivating scenes and shows.
-          </p> */}
         </div>
       </section>
     </>

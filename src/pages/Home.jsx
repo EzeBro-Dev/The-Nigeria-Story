@@ -1,7 +1,20 @@
 import '../styles/Home.css'
 import Hero from "../components/Hero"
 import { useRef, useState } from "react";
-import Footer from '../components/Footer'
+import Footer from '../components/Footer';
+import Nigeria from '../assets/nigeria.mp4';
+import Shagari from '../assets/images/shagari.png';
+import Awolowo from '../assets/images/awolowo.png';
+import Yaradua from '../assets/images/yaradua.png';
+import Abacha from '../assets/images/abacha.png';
+import Tinubu from '../assets/images/tinubu.png';
+import Babatunde from '../assets/images/babatunde.png';
+import Nneka from '../assets/images/nneka.png';
+import Sunday from '../assets/images/sunday.png';
+import Slumartlogo from '../assets/slumart.png';
+import AnimationHublogo from '../assets/animationhub.png';
+import Mrade from '../assets/images/mrade.png';
+import Adetunwase from '../assets/adetunwase.png';
 
 const Home = () => {
 
@@ -37,7 +50,7 @@ const Home = () => {
         <div className="video-cont">
           <video
             ref={videoRef}
-            src="https://res.cloudinary.com/dam0dyzlz/video/upload/v1776287186/nigeria_v12mkf.mp4"
+            src={Nigeria}
             autoPlay
             muted
             loop
@@ -71,7 +84,7 @@ const Home = () => {
         <div className="legends-cont">
           <div className="legends-box">
             <div className="legends-img">
-              <img src="src/assets/images/shagari.png" alt="Image" />
+              <img src={Shagari} alt="Image" />
               <div className="legends-img-text">
                 <p>1979 - 1983</p>
                 <h2>Shehu Shagari</h2>
@@ -88,7 +101,7 @@ const Home = () => {
 
           <div className="legends-box">
             <div className="legends-img">
-              <img src="src/assets/images/awolowo.png" alt="Image" />
+              <img src={Awolowo} alt="Image" />
               <div className="legends-img-text">
                 <p>1954 - 1960</p>
                 <h2>Obafemi Awolowo</h2>
@@ -105,7 +118,7 @@ const Home = () => {
 
           <div className="legends-box">
             <div className="legends-img">
-              <img src="src/assets/images/yaradua.png" alt="Image" />
+              <img src={Yaradua} alt="Image" />
               <div className="legends-img-text">
                 <p>2007 - 2010</p>
                 <h2>Umaru Musa Yar'Adua</h2>
@@ -122,7 +135,7 @@ const Home = () => {
 
           <div className="legends-box">
             <div className="legends-img">
-              <img src="src/assets/images/abacha.png" alt="Image" />
+              <img src={Abacha} alt="Image" />
               <div className="legends-img-text">
                 <p>1993 - 1998</p>
                 <h2>Sani Abacha</h2>
@@ -139,7 +152,7 @@ const Home = () => {
 
           <div className="legends-box">
             <div className="legends-img">
-              <img src="src/assets/images/tinubu.png" alt="Image" />
+              <img src={Tinubu} alt="Image" />
               <div className="legends-img-text">
                 <p>2023 - Present</p>
                 <h2>Bola Ahmed Tinubu</h2>
@@ -164,7 +177,7 @@ const Home = () => {
         <div className="voices-cont">
           <div className="voices-box">
             <div className="voices-img">
-              <img src="src/assets/images/babatunde.png" alt="Image" />
+              <img src={Babatunde} alt="Image" />
               <div className="voices-img-text">
                 <h2>Babatunde Aliyu</h2>
                 <span>📍Lagos, Nigeria</span>
@@ -181,7 +194,7 @@ const Home = () => {
 
           <div className="voices-box">
             <div className="voices-img">
-              <img src="src/assets/images/nneka.png" alt="Image" />
+              <img src={Nneka} alt="Image" />
               <div className="voices-img-text">
                 <h2>Nneka Okafor</h2>
                 <span>📍Enugu, Nigeria</span>
@@ -197,7 +210,7 @@ const Home = () => {
 
           <div className="voices-box">
             <div className="voices-img">
-              <img src="src/assets/images/sunday.png" alt="Image" />
+              <img src={Sunday} alt="Image" />
               <div className="voices-img-text">
                 <h2>Sunday Igwee</h2>
                 <span>📍Abuja, FCT</span>
@@ -251,16 +264,16 @@ const Home = () => {
       <section className="powered">
         <h1>Powered By</h1>
         <div className="powered-cont">
-          <img src="src/assets/slumart.png" alt="Image" />
-          <img src="src/assets/animationhub.png" alt="Image" />
+          <img src={Slumartlogo} alt="Image" />
+          <img src={AnimationHublogo} alt="Image" />
           <div className="powered-cont2">
             <img
-              src="src/assets/images/mrade.png"
+              src={Mrade}
               alt="Image"
               className="powered-img"
             />
             <img
-              src="src/assets/adetunwase.png"
+              src={Adetunwase}
               alt="Image"
               className="powered-img2"
             />

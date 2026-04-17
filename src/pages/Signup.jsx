@@ -4,6 +4,7 @@ import '../styles/Signup.css'
 import { useState } from "react";
 import { sendMagicLink, loginWithGoogle } from "../services/auth";
 import { useNavigate } from "react-router-dom";
+import Google from '../assets/google.png';
 
 const Signup = () => {
 
@@ -68,7 +69,7 @@ const Signup = () => {
           <p>An historic collaborative animation project</p>
         </div>
         <button onClick={loginWithGoogle}>
-          <img src="src/assets/google.png" alt="Google" />
+          <img src={Google} alt="Google" />
           <span>Continue with Google</span>
         </button>
         <span>OR</span>

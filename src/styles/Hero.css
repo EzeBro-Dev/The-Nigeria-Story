@@ -3,7 +3,7 @@
   height: 100vh;
   display: flex;
   justify-content: space-between;
-  background-image: url(src/assets/hero-bg.png);
+  background-image: url(/hero-bg.png);
   background-repeat: no-repeat;
   background-size: cover;
 }
