@@ -50,9 +50,6 @@
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  /* background-image: url(src/assets/black-pattern.png);
-  background-repeat: no-repeat;
-  background-size: cover; */
   background-color: black;
   color: white;
 }
@@ -167,15 +164,21 @@ img {
 @media (max-width: 1024px) {
 
   /* HERO */
+  .nav-img {
+    width: 250px;
+    height: fit-content;
+  }
+
   .nav-btn {
-    font-size: 18px;
-    padding: 10px 35px;
+    width: 170px;
+    height: 80px;
   }
 
   .guinness {
-    width: 220px;
+    width: 500px;
+    height: 200px;
     bottom: 30px;
-    left: 30px;
+    left: 220px;
   }
 
   /* TELL */
@@ -210,19 +213,19 @@ img {
   }
 
   .nav-img {
-    width: 100px;
+    width: 150px;
     height: fit-content;
   }
 
   .nav-btn {
-    font-size: 16px;
-    padding: 8px 25px;
+    width: 100px;
+    height: 50px;
   }
 
   .guinness {
-    width: 220px;
+    width: 280px;
     bottom: 30px;
-    left: 150px;
+    left: 130px;
   }
 
 
@@ -267,19 +270,23 @@ img {
     background-position: center;
   }
 
+  .hero>div{
+    padding: 3%;
+  }
+
   .nav-img {
-    width: 80px;
+    width: 120px;
   }
 
   .nav-btn {
-    font-size: 14px;
-    padding: 6px 18px;
+    width: 100px;
+    height: 50px;
   }
 
   .guinness {
-    width: 220px;
+    width: 280px;
     bottom: 30px;
-    left: 100px;
+    left: 50px;
   }
 
   /* TELL */
