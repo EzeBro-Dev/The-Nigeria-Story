@@ -2,7 +2,6 @@ import '../styles/Home.css'
 import Hero from "../components/Hero"
 import { useRef, useState } from "react";
 import Footer from '../components/Footer';
-import NigeriaTrailer from '../assets/nigeria-trailer.mp4';
 import Shagari from '../assets/images/shagari.png';
 import Awolowo from '../assets/images/awolowo.png';
 import Yaradua from '../assets/images/yaradua.png';
@@ -50,7 +49,8 @@ const Home = () => {
         <div className="video-cont">
           <video
             ref={videoRef}
-            src={NigeriaTrailer}
+            src="/nigeria-trailer.mp4"
+            type="video/mp4"
             autoPlay
             muted
             loop
@@ -267,16 +267,8 @@ const Home = () => {
           <img src={Slumartlogo} alt="Image" />
           <img src={AnimationHublogo} alt="Image" />
           <div className="powered-cont2">
-            <img
-              src={Mrade}
-              alt="Image"
-              className="powered-img"
-            />
-            <img
-              src={Adetunwase}
-              alt="Image"
-              className="powered-img2"
-            />
+            <img src={Mrade} alt="Image" className="powered-img" />
+            <img src={Adetunwase} alt="Image" className="powered-img2" />
           </div>
         </div>
       </section>
