@@ -224,6 +224,7 @@ img {
 
   .guinness {
     width: 280px;
+    height: auto;
     bottom: 30px;
     left: 130px;
   }
@@ -285,6 +286,7 @@ img {
 
   .guinness {
     width: 280px;
+    height: auto;
     bottom: 30px;
     left: 50px;
   }
