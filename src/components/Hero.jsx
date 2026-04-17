@@ -2,7 +2,7 @@ import { Link } from "react-router-dom";
 import "../styles/Hero.css";
 import Logo from "../assets/logo.png";
 import Guinness from "../assets/guinness.png";
-import Slumart from "../assets/slumart.mp4";
+import SlumartVideo from "../assets/slumart-video.mp4";
 
 const Hero = () => {
   return (
@@ -35,7 +35,7 @@ const Hero = () => {
       <section className="stories">
         <video className="bg-video" autoPlay muted loop playsInline>
           <source
-            src={Slumart}
+            src={SlumartVideo}
             type="video/mp4"
           />
           Your browser does not support the video tag.
