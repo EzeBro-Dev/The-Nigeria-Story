@@ -1,5 +1,6 @@
 import { Link } from "react-router-dom";
 import "../styles/Navbar.css";
+import Logo from "../assets/logo.png";
 
 const Navbar = () => {
   return (
@@ -7,7 +8,7 @@ const Navbar = () => {
       <nav className="navbar">
         <Link to="/">
           <div className="nav-brand">
-            <img src="src/assets/logo.png" alt="Img" />
+            <img src={Logo} alt="Img" />
           </div>
         </Link>
         <Link to="/signup">

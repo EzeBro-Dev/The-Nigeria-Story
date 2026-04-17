@@ -219,6 +219,12 @@ img {
     padding: 8px 25px;
   }
 
+  .guinness {
+    width: 220px;
+    bottom: 30px;
+    left: 150px;
+  }
+
 
   /* TELL */
   .tell {
@@ -241,7 +247,7 @@ img {
 
   /* STORIES */
   .stories-content > h1 {
-    font-size: 2.5rem;
+    font-size: 3rem;
     width: 90%;
   }
 
@@ -257,6 +263,10 @@ img {
 @media (max-width: 480px) {
 
   /* HERO */
+  .hero {
+    background-position: center;
+  }
+
   .nav-img {
     width: 80px;
   }
@@ -264,6 +274,12 @@ img {
   .nav-btn {
     font-size: 14px;
     padding: 6px 18px;
+  }
+
+  .guinness {
+    width: 220px;
+    bottom: 30px;
+    left: 100px;
   }
 
   /* TELL */
@@ -281,7 +297,7 @@ img {
 
   /* STORIES */
   .stories-content > h1 {
-    font-size: 2rem;
+    font-size: 2.5rem;
   }
 
   .stories-content > p {
