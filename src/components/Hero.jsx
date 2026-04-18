@@ -12,9 +12,9 @@ const Hero = () => {
             <img src={Logo} alt="Logo" />
           </div>
           <div>
-            {/* <Link to="/signup"> */}
+            <Link to="/signup">
               <button className="nav-btn">Join</button>
-            {/* </Link> */}
+            </Link>
           </div>
           <img src={Guinness} alt="Image" className="guinness" />
         </div>
