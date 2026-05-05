@@ -6,20 +6,37 @@ const DashboardLayout = () => {
   const navigate = useNavigate();
   const [user, setUser] = useState(null);
   const [loading, setLoading] = useState(true);
+  const [isAdmin, setIsAdmin] = useState(false); // 🔥 Added admin state back
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
 
   useEffect(() => {
-    const getUser = async () => {
+    const checkAccess = async () => {
       const { data: { session } } = await supabase.auth.getSession();
+      
       if (!session) {
         navigate('/');
-      } else {
+        return;
+      }
+
+      // Check Admin and App status
+      const { data: profile } = await supabase.from('profiles').select('is_admin').eq('id', session.user.id).single();
+      const { data: app } = await supabase.from('applications').select('status').eq('user_id', session.user.id).maybeSingle();
+
+      const userIsAdmin = profile?.is_admin === true;
+      setIsAdmin(userIsAdmin); // 🔥 Store admin status
+
+      if (userIsAdmin || app?.status === 'approved') {
         setUser(session.user);
         setLoading(false);
+      } else {
+        // Kick them to the application/waiting room
+        navigate('/apply');
       }
     };
-    getUser();
+    checkAccess();
   }, [navigate]);
+
+  // Note: Removed the second redundant useEffect here. The single checkAccess block handles it faster!
 
   const handleSignOut = async () => {
     await supabase.auth.signOut();
@@ -89,8 +106,9 @@ const DashboardLayout = () => {
           <div className="w-full">
             <h2 className="text-lg font-bold text-white break-words group-hover:text-[#FFD700] transition-colors">{displayName}</h2>
             <p className="text-xs text-zinc-500 mb-3 break-all">{user?.email}</p>
-            <span className="bg-[#FFD700]/5 text-[#FFD700] px-3 py-1.5 rounded-full text-[11px] font-bold border border-[#FFD700]/20 tracking-wide uppercase">
-              Story Contributor
+            {/* Dynamic Badge for Admins vs Contributors */}
+            <span className={`px-3 py-1.5 rounded-full text-[11px] font-bold border tracking-wide uppercase ${isAdmin ? 'bg-purple-500/10 text-purple-400 border-purple-500/20' : 'bg-[#FFD700]/5 text-[#FFD700] border-[#FFD700]/20'}`}>
+              {isAdmin ? 'System Admin' : 'Story Contributor'}
             </span>
           </div>
         </div>
@@ -116,6 +134,24 @@ const DashboardLayout = () => {
               <span className="text-lg w-6 text-center opacity-80 group-hover:opacity-100">🏆</span> Leaderboard
             </NavLink>
           </div>
+
+          {/* 🔥 ADMIN ONLY MENU */}
+          {isAdmin && (
+            <div className="flex flex-col gap-1">
+              <h3 className="text-[10px] uppercase tracking-widest text-zinc-600 ml-4 mb-2 font-bold">Administration</h3>
+              <NavLink 
+                to="/dashboard/admin" 
+                className={({ isActive }) => `flex items-center gap-4 px-4 py-3 rounded-xl transition-all duration-300 font-medium text-sm w-full group border ${
+                  isActive 
+                    ? "bg-[#FFD700]/10 text-[#FFD700] border-[#FFD700]/30 shadow-[0_0_15px_rgba(241,157,0,0.1)]" 
+                    : "text-[#FFD700]/70 border-transparent hover:bg-white/5 hover:text-[#FFD700]"
+                }`}
+                onClick={closeMenu}
+              >
+                <span className="text-lg w-6 text-center opacity-80 group-hover:opacity-100">⚡</span> Command Center
+              </NavLink>
+            </div>
+          )}
 
           <div className="flex flex-col gap-1">
             <h3 className="text-[10px] uppercase tracking-widest text-zinc-600 ml-4 mb-2 font-bold">Account</h3>

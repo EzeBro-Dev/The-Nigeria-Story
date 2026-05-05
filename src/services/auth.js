@@ -1,27 +1,35 @@
-import { supabase } from "../lib/supabaseClient";
+import { supabase } from '../lib/supabaseClient';
 
-
-export async function sendMagicLink(email) {
-  const { error } = await supabase.auth.signInWithOtp({
+// 1. Standard Email/Password Sign Up
+export const signUpWithEmail = async (email, password) => {
+  const { data, error } = await supabase.auth.signUp({
     email,
-    options: {
-      emailRedirectTo: "http://localhost:5173/dashboard",
-    },
+    password,
   });
+  return { data, error };
+};
 
-  if (error) return { error: error.message };
-
-  return { success: true };
-}
-
-
-export async function loginWithGoogle() {
-  const { error } = await supabase.auth.signInWithOAuth({
-    provider: "google",
-    options: {
-      redirectTo: "http://localhost:5173/dashboard",
-    },
+// 2. Standard Email/Password Log In
+export const signInWithEmail = async (email, password) => {
+  const { data, error } = await supabase.auth.signInWithPassword({
+    email,
+    password,
   });
+  return { data, error };
+};
 
-  if (error) return { error: error.message };
-}
+// 3. Keep your Google Login!
+export const loginWithGoogle = async () => {
+  const { data, error } = await supabase.auth.signInWithOAuth({
+    provider: 'google',
+  });
+  return { data, error };
+};
+
+// Add this below your other functions in src/services/auth.js
+export const resetPassword = async (email) => {
+  const { data, error } = await supabase.auth.resetPasswordForEmail(email, {
+    redirectTo: `${window.location.origin}/dashboard`, // Where to send them after clicking the link
+  });
+  return { data, error };
+};
