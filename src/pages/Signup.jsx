@@ -17,6 +17,17 @@ const Signup = () => {
   const { user } = useAuth();
   const navigate = useNavigate();
 
+  // --- FOOLPROOF CAPTURE: Snatch the referral code from the URL ---
+  useEffect(() => {
+    const params = new URLSearchParams(window.location.search);
+    const ref = params.get('ref');
+    
+    // If there is a referral code, save it safely in the browser
+    if (ref) {
+      localStorage.setItem('magic_invite_ref', ref);
+    }
+  }, []);
+
   useEffect(() => {
     if (user) navigate('/apply');
   }, [user, navigate]);
